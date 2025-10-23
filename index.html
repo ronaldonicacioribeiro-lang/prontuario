@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prontuário Médico - Alice Henriques</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <main class="main-content">
+            <header class="header">
+                <div class="patient-tags">
+                    <span> </span>
+                </div>
+                <div class="header-right">
+                    <span class="material-icons">search</span>
+                    <span class="material-icons">notifications</span>
+                    <span class="material-icons">settings</span>
+                    <div class="user-profile">
+                        <img src="https://via.placeholder.com/30" alt="User Avatar">
+                        <span>GestãoOS - Clínica Teste <span class="material-icons">arrow_drop_down</span></span>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content-area">
+                <div class="patient-header">
+                    <div class="patient-info-left">
+                        <img src="https://via.placeholder.com/80x80" alt="Patient Avatar" class="patient-avatar">
+                        <div class="patient-details">
+                            <h2>Sarah Akilla </h2>
+                            <p>UNIMED 123</p>
+                            <p>- (00)00000-0000</p>
+                            <p>25 anos</p>
+                        </div>
+                    </div>
+                    <div class="patient-actions">
+                        <button class="btn btn-orange"><span class="material-icons">edit</span> Editar</button>
+                        <button class="btn btn-info"><span class="material-icons">info</span> Informações</button>
+                        <button class="btn btn-multiclinic"><span class="material-icons">local_hospital</span> Paciente Multiclínica</button>
+                    </div>
+                </div>
+
+                <nav class="patient-tabs">
+                    <button class="tab-button active" data-tab="info-pessoais">Informações Pessoais</button>
+                    <button class="tab-button" data-tab="prescricoes">Prescrições</button>
+                    <button class="tab-button" data-tab="acompanhamento">Acompanhamento</button>
+                    <button class="tab-button" data-tab="financeiro">Financeiro</button>
+                    <button class="tab-button" data-tab="orcamentos">Orçamentos</button>
+                </nav>
+
+                <div class="tabs-content-container">
+
+                    <div id="info-pessoais" class="tab-content active">
+                        <div class="patient-sections">
+                            <div class="section-left">
+                                <div class="card">
+                                    <h3>Futuros agendamentos:</h3>
+                                    <div id="agendamentos-lista">
+                                        <p>(Nenhum agendamento futuro)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-right">
+                                <div class="card">
+                                    <h3>Observações:</h3>
+                                    <p>- Paciente mais sensível a dor! Agendar procedimentos com tempo extra <span class="material-icons">edit</span></p>
+                                    <p>por Marina Dias em 08/11/2022 16:37</p>
+                                </div>
+                                <div class="card">
+                                    <h3>Observações privadas:</h3>
+                                    <p>- Paciente diabética <span class="material-icons">edit</span></p>
+                                    <p>por Marina Dias em 08/11/2022 16:36</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="prescricoes" class="tab-content">
+                        <h2>Nova Prescrição</h2>
+                        <p>Preencha o formulário de anamnese e detalhes da prescrição.</p>
+                        
+                        <form id="form-prescricao">
+                            
+                            <div class="form-group">
+                                <label>Paciente possui alergia a algum medicamento?</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="alergia_sim" name="alergia" value="sim">
+                                    <label for="alergia_sim">Sim</label>
+                                    
+                                    <input type="radio" id="alergia_nao" name="alergia" value="nao" checked>
+                                    <label for="alergia_nao">Não</label>
+                                </div>
+                                <textarea id="alergia_detalhes" class="form-control" placeholder="Se sim, quais?" style="display: none; margin-top: 10px;"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Paciente faz uso de medicação contínua?</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="continuo_sim" name="continuo" value="sim">
+                                    <label for="continuo_sim">Sim</label>
+                                    
+                                    <input type="radio" id="continuo_nao" name="continuo" value="nao" checked>
+                                    <label for="continuo_nao">Não</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Paciente está grávida ou com suspeita de gravidez?</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="gravidez_sim" name="gravidez" value="sim">
+                                    <label for="gravidez_sim">Sim</label>
+                                    
+                                    <input type="radio" id="gravidez_nao" name="gravidez" value="nao" checked>
+                                    <label for="gravidez_nao">Não</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="prescricao_texto">Prescrição Detalhada:</label>
+                                <textarea id="prescricao_texto" class="form-control" rows="5" placeholder="Ex: Dipirona 500mg, 1 comprimido a cada 6 horas se dor..."></textarea>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-green"><span class="material-icons">save</span> Salvar Prescrição</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="acompanhamento" class="tab-content">
+                        <h2>Acompanhamento da Paciente</h2>
+                        <p>Gráficos e anotações sobre a evolução do tratamento...</p>
+                    </div>
+
+                    <div id="financeiro" class="tab-content">
+                        <h2>Financeiro</h2>
+                        <p>Histórico de pagamentos e débitos...</p>
+                    </div>
+
+                    <div id="orcamentos" class="tab-content">
+                        <h2>Orçamentos Realizados</h2>
+                        <p>Lista de orçamentos de procedimentos...</p>
+                    </div>
+
+                </div> <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3></h3>
+                        <p>Consultas</p>
+                        <button id="novaConsultaBtn" class="btn btn-green"><span class="material-icons">add</span> Nova consulta</button>
+                    </div>
+                    <div class="stat-card">
+                        <h3>2</h3>
+                        <p>Exames</p>
+                        <button class="btn btn-green"><span class="material-icons">add</span> Novo Exame</button>
+                    </div>
+                    <div class="stat-card">
+                        <h3>0</h3>
+                        <p>Vacinas</p>
+                        <button class="btn btn-green"><span class="material-icons">add</span> Nova Vacinação</button>
+                    </div>
+                    <div class="stat-card">
+                        <h3>2</h3>
+                        <p>Cirurgias</p>
+                        <button class="btn btn-green"><span class="material-icons">add</span> Nova Cirurgia</button>
+                    </div>
+                    <div class="stat-card">
+                        <h3>47</h3>
+                        <p>Procedimentos</p>
+                        <button class="btn btn-orange"><span class="material-icons">redo</span> Voltar ao Procedimento</button>
+                    </div>
+                    <div class="stat-card">
+                        <h3>0</h3>
+                        <p>Cancelados</p>
+                    </div>
+                </div>
+
+            </div> </main>
+    </div> </body>
+</html>

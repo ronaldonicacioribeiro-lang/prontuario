@@ -1,0 +1,292 @@
+/* --- Estilos Globais --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Remove espaços em branco estranhos no HTML */
+body > .container {
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-content {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden; /* Garante que o conteúdo não vaze */
+}
+
+.material-icons {
+    vertical-align: middle;
+    font-size: 1.25em;
+    line-height: 1;
+}
+
+/* --- Header --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.header-right > .material-icons {
+    color: #555;
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.user-profile img {
+    border-radius: 50%;
+}
+
+/* --- Área de Conteúdo Principal --- */
+.content-area {
+    padding: 25px;
+}
+
+/* --- Cabeçalho do Paciente --- */
+.patient-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.patient-info-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.patient-avatar {
+    border-radius: 50%;
+    border: 3px solid #ddd;
+}
+
+.patient-details h2 {
+    margin: 0 0 5px 0;
+    color: #000;
+}
+
+.patient-details p {
+    margin: 4px 0;
+    color: #555;
+}
+
+.patient-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* --- Botões --- */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.2s;
+}
+.btn .material-icons {
+    font-size: 1.1em;
+}
+
+.btn-orange { background-color: #f39c12; }
+.btn-info { background-color: #3498db; }
+.btn-multiclinic { background-color: #9b59b6; }
+.btn-green { background-color: #2ecc71; }
+
+.btn-orange:hover { background-color: #e67e22; }
+.btn-info:hover { background-color: #2980b9; }
+.btn-multiclinic:hover { background-color: #8e44ad; }
+.btn-green:hover { background-color: #27ae60; }
+
+
+/* --- Sistema de Abas --- */
+.patient-tabs {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-top: 20px;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #777;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px; /* Alinha com a borda principal */
+}
+
+.tab-button:hover {
+    background-color: #f9f9f9;
+    color: #000;
+}
+
+.tab-button.active {
+    border-bottom: 3px solid #3498db; /* Azul */
+    color: #3498db;
+    font-weight: 600;
+}
+
+/* --- Conteúdo das Abas (REGRA ESSENCIAL) --- */
+.tab-content {
+    display: none; /* Esconde todo conteúdo de aba por padrão */
+    padding: 20px 5px; /* Espaçamento vertical */
+}
+
+.tab-content.active {
+    display: block; /* Mostra APENAS o conteúdo da aba ativa */
+}
+
+/* --- Cards e Seções Internas --- */
+.card {
+    background-color: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.card h3 {
+    margin-top: 0;
+}
+.card p {
+    color: #666;
+    line-height: 1.5;
+}
+.card .material-icons {
+    font-size: 1em;
+    color: #999;
+}
+
+.patient-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+@media (max-width: 768px) {
+    .patient-sections {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    }
+}
+
+
+/* --- Grid de Estatísticas --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.stat-card h3 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #3498db;
+    min-height: 1.2em; /* Garante altura mesmo vazio */
+}
+.stat-card p {
+    margin: 5px 0 15px 0;
+    color: #555;
+    font-weight: bold;
+}
+.stat-card .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+
+/* --- Estilos para o novo Formulário --- */
+#form-prescricao {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre os grupos de perguntas */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    max-width: 800px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espaço entre o rótulo e as opções */
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #333;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaço entre "Sim" e "Não" */
+}
+
+.radio-group label {
+    font-weight: normal;
+    color: #555;
+    margin-left: 5px; /* Espaço entre o botão e o texto */
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* Estilo para caixas de texto */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box; /* Garante que o padding não quebre o layout */
+}
+
+.form-actions {
+    margin-top: 15px;
+    text-align: right; /* Alinha o botão à direita */
+}
